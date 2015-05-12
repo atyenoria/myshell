@@ -1,0 +1,82 @@
+#!/bin/bash
+
+IFS_BACKUP=$IFS
+IFS=$'\n'
+
+
+files="/Users/jima/Desktop/*"
+for filepath in ${files}
+do
+  array+=(${filepath})
+  	echo $filename
+done
+
+
+
+for i in `seq 1 ${#array[@]}`
+do
+ 
+
+if [ '0' = ${#array[@]} ]; then
+	echo "no file"
+	exit
+fi
+ 
+
+#zip
+if [ 'zip' = ${array[$i-1]#*.} ]; then
+ 
+		expect -c "
+		set timeout 30000
+		spawn unzip ${array[$i-1]}
+		expect {
+		    \"replace\" { send \"y\n\" }
+		}
+		interact
+		"
+		
+		rm ${array[$i-1]}
+		echo "create:"${array[$i-1]%.*}"\n"
+		echo "and delete\n"
+		
+fi	
+
+
+#tar.gz
+if [ 'tar.gz' = ${array[$i-1]#*.} ]; then
+ 
+		expect -c "
+		set timeout 30000
+		spawn unzip ${array[$i-1]}
+		expect {
+		    \"replace\" { send \"y\n\" }
+		}
+		interact
+		"
+
+		rm ${array[$i-1]}
+		echo "create:"${array[$i-1]%.*}"\n"
+		echo "and delete\n"
+		
+fi	
+
+
+done
+
+#元に戻す
+IFS=$IFS_BACKUP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

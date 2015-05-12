@@ -1,0 +1,38 @@
+#!/bin/bash
+
+filepath=$1
+filename=`basename ${filepath}`
+# for filepath in ${files}
+# do
+#   filename=`basename ${filepath}`
+#   array+=(${filename})
+#   echo $filename
+#   echo $1
+# done
+ 
+ 
+# for i in `seq 1 ${#array[@]}`
+# do
+ 
+#ディレクトリにファイルが存在しない場合は終了
+# if [ '0' = ${#array[@]} ]; then
+# 	echo "no file"
+# 	exit
+# fi
+echo array
+if [ 'zip' = ${filename##*.} ]; then
+		expect -c "
+		set timeout 300
+		spawn unzip ${filename}
+		expect {
+		    \"replace\" { send \"y\n\" }
+		}
+		interact
+		"
+		#.zipを削除する
+		rm ${filename}
+		echo "create:"${filename%.*}"\n"
+		echo "and delete\n"
+		
+fi	
+echo end
