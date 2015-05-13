@@ -1,0 +1,38 @@
+#!/bin/bash
+
+export NAME=autochx
+export TMP=/Users/jima/myshell/tmp
+export PID=${TMP}/${NAME}.pid
+export LOG=${TMP}/${NAME}.log
+export ENV=${TMP}/${NAME}.env
+
+test -d $TMP || mkdir $TMP
+test -d $LOG || touch $LOG
+# test -f $ENV || source $ENV
+
+case $1 in
+  'start' )
+    $0 status >/dev/null 2>&1 && echo "${NAME} is already running." && exit 1
+    nohup /Users/jima/myshell/d_cxshell  1>$LOG 2>&1 &
+    echo $! > $PID
+    ;;
+  'stop' )
+    $0 status >/dev/null 2>&1 || echo "${NAME} is not running." || exit 1
+    test -f $PID && cat $PID | xargs kill -s SIGKILL && rm $PID
+    ;;
+  'restart' )
+    $0 stop
+    sleep 1
+    $0 start
+    ;;
+  'status' )
+    test -f $PID || echo "${NAME} not running." || exit 1
+    PID=`cat $PID`
+    kill -s 0 $PID >/dev/null 2>&1 && echo "${NAME} is running." && exit 0
+    echo "${NAME} not running."
+    exit 1
+    ;;
+  *)
+    echo "Usage: $0 start|stop|restart|status"
+    ;;
+esac
