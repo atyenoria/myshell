@@ -1,0 +1,8 @@
+2015-05-13 12:07 fswatch[1634] (CarbonCore.framework) server_gone_StreamRef_callback: register_with_server: ERROR: f2d_register_rpc() => (ipc/mig) server died (-308)
+2015-05-13 12:07 fswatch[1634] (CarbonCore.framework) server_gone_StreamRef_callback: re-registering with server failed and returned -308 (f2d port 0x0)
+2015-05-13 12:07 fswatch[1634] (CarbonCore.framework) FSEventStreamStop(): failed assertion 'streamRef->f2d_private_port != MACH_PORT_NULL'
+
+2015-05-13 12:07 fswatch[1634] (CarbonCore.framework) streamRef->cfRunLoopSourceRef != NULL || streamRef->event_source != NULL(): failed assertion: Must call FSEventStreamScheduleWithRunLoop() before calling FSEventStreamInvalidate()
+
+2015-05-13 12:07 fswatch[1634] (CarbonCore.framework) !streamRef->isStarted(): failed assertion: FSEventStream was released (causing it to be deallocated) without calling FSEventStreamStop()
+

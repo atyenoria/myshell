@@ -1,0 +1,4 @@
+#!/bin/bash
+
+#chrom用autozip
+nohup /Users/jima/myshell/d_autozip > out.log 2> err.log &
