@@ -81,3 +81,19 @@ if you increase files which you want to remove, **modify this section (ls~~,rm ?
 #####appendix:
 
 ---
+
+##5: log rotation for these scripts
+
+####content:
+
+**log_shell**
+  
+####overview:
+log is rotated by filezise or created time 
+
+
+##### installation method:
+1. chmod +x these items,and pass this for globally
+2. chmod +x these items,and pass this for globally		
+
+#####appendix:
