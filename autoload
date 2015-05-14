@@ -1,5 +1,5 @@
 #!/bin/bash
 #for mac startup items
 
-chrome_d start
-cxshell_d start
+d_chrome start
+d_cxshell start
