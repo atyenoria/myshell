@@ -14,7 +14,7 @@ check out this for login items
 
 2:chrome_d, d_autozip
 zip and tar -xzvf automatically 
-#chrome 自動解凍
+chrome 自動解凍
 
 method:
 chmod +x these items,and pass this for globally
