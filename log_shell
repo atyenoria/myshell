@@ -1,0 +1,74 @@
+#!/bin/bash
+
+LOGRFILE=/Users/jima/myshell/tmp/logrotate.log
+ {
+
+
+# cd `dirname $0`
+DIR_BASE=/Users/jima/myshell/tmp #log file location
+cd $DIR_BASE
+ls -la
+SUFFIX_DATE=`date +%Y%m%d`
+MYSELF_SH=$0
+
+for x in `ls -1 ${DIR_BASE} 2> /dev/null`;
+do
+    if [[ $x =~ .*\.log ]]; 
+    then
+        ArrayFiles+=($x)
+    fi
+done
+
+
+
+
+for el in ${ArrayFiles[@]};
+do
+    echo $el
+    # rotation
+    cp ${el} ${el}.${SUFFIX_DATE}
+    cp /dev/null ${el}
+    gzip -9 ${el}.${SUFFIX_DATE}
+
+    # move to archive directory
+    DestinationstDir=$DIR_BASE/arc
+    if [ ! -d $DestinationstDir ];
+    then
+        mkdir -p $DestinationstDir
+    fi
+    mv ${el}.${SUFFIX_DATE}.gz $DestinationstDir
+done
+
+
+
+
+#rotation of archive file
+
+            #threshold by created time
+            for l in `find ./ -name "*.zip" -mtime +1`;
+            do
+                echo $l
+                if [ -f $l ];
+                then
+                    rm -f $l >& /dev/null
+                    echo "delete by time"
+                fi
+            done
+
+            for l in `find ./ -name "*.zip"`;
+            do
+                echo $l
+            # threshold by file size
+            tmp=`wc -c < $l | sed -e 's/^  *//g'`
+            if [ 3 -le $tmp ];
+            then
+
+                    rm -f $l >& /dev/null
+                    echo "delete by size"
+            fi
+            done          
+
+
+} >> "$LOGRFILE" 2>&1
+
+exit 0

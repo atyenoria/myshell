@@ -6,3 +6,4 @@ tmp_filename=`basename $1`
 tmp_filename=${tmp_filename%.*}
 # tmp_name=`ls -t|head -1 |gawk '{print $1}'` for dev
 cd $tmp_filename&&rm -rf .git &&mv * .. &&cd .. &&rm -rf $tmp_filename
+#or,find ./ -name ".git" -exec rm -rf {} \; 
