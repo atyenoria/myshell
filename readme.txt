@@ -1,10 +1,31 @@
-$? 正常終了は０
-＄！　直前実行PID
-$$ コマンド自身のPID
-$#　引数の数
+#description:
+
+##these are my shellscript sample.
+##now, Three contes exist.
 
 
-content
+####1:autoload
+Startup script for Mac OSX.
 
-1:自動chmod+x
-2:chrome download 自動解凍
+method:
+add Users & Groups 
+check out this for login items
+
+
+2:chrome_d, d_autozip
+zip and tar -xzvf automatically 
+#chrome 自動解凍
+
+method:
+chmod +x these items,and pass this for globally
+change DOWNLOADS PATHS
+tmp is log and pid directory
+
+
+3:cxshell_d, d_cxshell
+chmod +x items in specific directory automatically
+
+method:
+chmod +x these items,and pass this for globally
+tmp is log and pid  directory
+

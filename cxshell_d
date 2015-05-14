@@ -1,10 +1,13 @@
 #!/bin/bash
+#chmod +x automatically
 
-export NAME=autochx
+export NAME=cxshell_d
 export TMP=/Users/jima/myshell/tmp
 export PID=${TMP}/${NAME}.pid
 export LOG=${TMP}/${NAME}.log
 export ENV=${TMP}/${NAME}.env
+
+
 
 test -d $TMP || mkdir $TMP
 test -d $LOG || touch $LOG
