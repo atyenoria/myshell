@@ -7,6 +7,7 @@ export PID=${TMP}/${NAME}.pid
 export LOG=${TMP}/${NAME}.log
 export ENV=${TMP}/${NAME}.env
 
+
 test -d $TMP || mkdir $TMP
 test -d $LOG || touch $LOG
 # test -f $ENV || source $ENV

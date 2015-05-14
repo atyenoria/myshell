@@ -1,19 +1,14 @@
 #!/bin/bash
-fswatch -0 /Users/jima/Desktop | while read -d "" event 
-  do 
-    autozip 
-  done
 
-
-autozip(){
+function autozip(){
 #改行のみ
 IFS_BACKUP=$IFS
 IFS=$'\n'
-
-
+CROME_DFILESP=$CROME_DFILES/*
+echo $CROME_DFILESP 
 cd $CROME_DFILESP
 
-for filepath in ${CROME_DFILES}
+for filepath in ${CROME_DFILESP}
 do
   array+=(${filepath})
   	echo $filename
@@ -27,7 +22,7 @@ do
 
 if [ '0' = ${#array[@]} ]; then
 	echo "no file"
-	exit
+	exit 0
 fi
  
 
@@ -78,3 +73,11 @@ done
 #元に戻す
 IFS=$IFS_BACKUP
 }
+
+
+fswatch -0 /Users/jima/Desktop | while read -d "" event 
+  do 
+    autozip 
+  done
+
+

@@ -1,5 +1,7 @@
 #!/bin/bash
-#for mac startup items
+#startup script for mac startup items
 
-d_chrome start
-d_cxshell start
+export CROME_DFILES=/Users/jima/Desktop #set the chrome default download directory
+
+s_chrome start
+s_cxshell start
