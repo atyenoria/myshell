@@ -1,6 +1,7 @@
 #!/bin/bash
+#zip automatically
 
-export NAME=autozip
+export NAME=chrome_d
 export TMP=/Users/jima/myshell/tmp
 export PID=${TMP}/${NAME}.pid
 export LOG=${TMP}/${NAME}.log
