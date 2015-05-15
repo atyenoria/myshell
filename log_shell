@@ -4,10 +4,10 @@ LOGRFILE=/Users/jima/myshell/tmp/logrotate.log
  {
 
 
+
 # cd `dirname $0`
 DIR_BASE=/Users/jima/myshell/tmp #log file location
 cd $DIR_BASE
-ls -la
 SUFFIX_DATE=`date +%Y%m%d`
 MYSELF_SH=$0
 
@@ -27,7 +27,7 @@ do
     echo $el
     # rotation
     cp ${el} ${el}.${SUFFIX_DATE}
-    cp /dev/null ${el}
+    rm -f ${el}
     gzip -9 ${el}.${SUFFIX_DATE}
 
     # move to archive directory
@@ -66,7 +66,7 @@ done
                     rm -f $l >& /dev/null
                     echo "delete by size"
             fi
-            done          
+            done   
 
 
 } >> "$LOGRFILE" 2>&1

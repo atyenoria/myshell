@@ -1,0 +1,71 @@
+#!/bin/bash
+
+IFS_BACKUP=$IFS
+IFS=$'\n'
+export CROME_DFILES=/Users/jima/Desktop #set the chrome default download directory
+
+
+CROME_DFILESP=$CROME_DFILES/*
+# echo $CROME_DFILESP 
+cd $CROME_DFILES
+
+
+for filepath in ${CROME_DFILESP}
+do
+  array+=(${filepath})
+  	# echo $filename
+done
+
+
+for i in `seq 1 ${#array[@]}`
+do
+ 
+
+if [ '0' = ${#array[@]} ]; then
+	echo "no file"
+	exit 0
+fi
+ 
+
+#zip
+if [ 'zip' = ${array[$i-1]##*.} ]; then
+	
+ 		# tmp_filename=`basename ${array[$i-1]}`
+ 		# tmp_filename=${tmp_filename%.*} #ファイル名のみ取得
+
+		expect -c "
+		set timeout 3
+		spawn unzip ${array[$i-1]}
+		expect {
+		    \"replace\" { send \"A\n\" }
+		}
+		interact
+		"
+		sleep 10
+		rm ${array[$i-1]} && log_shell
+		echo "create:"${array[$i-1]%.*}"\n"
+		echo "and delete\n"
+		
+fi	
+
+echo ${array[$i-1]##*.}
+#tar.gz
+if [ 'gz' = ${array[$i-1]##*.} ]; then
+ 
+		expect -c "
+		set timeout 300
+		spawn tar zxvf ${array[$i-1]}
+		expect {
+		    \"replace\" { send \"A\n\" }
+		}
+		interact
+		"
+		sleep 10
+		rm ${array[$i-1]}
+		echo "create:"${array[$i-1]%.*}"\n"
+		echo "and delete\n"
+		
+fi	
+
+
+done
