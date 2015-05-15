@@ -3,5 +3,18 @@
 
 export CROME_DFILES=/Users/jima/Desktop #set the chrome default download directory
 
-s_chrome start
-s_cxshell start
+
+
+
+#case1: executable pattern
+# s_chrome start
+# s_cxshell start
+
+
+
+#case2: pm2 pattern
+export CHROMED=/Users/jima/myshell/pm2/d_chrome.sh #set the chrome default download directory
+export SHELLX=/Users/jima/myshell/pm2/d_cxshell.sh #set the chrome default download directory
+
+pm2 start $CHROMED -x 
+pm2 start $SHELLX -x 
