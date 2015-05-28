@@ -1,0 +1,11 @@
+tmp=`readlink -e $1`
+tmp_base=`basename $tmp`
+
+rsync --progress  -avz $tmp jima@172.20.10.5:/Users/jima/work/rsyc_vagrant/test
+
+TMP_MAC=/Users/jima/work/rsyc_vagrant/test
+echo $tmp
+echo $tmp_base
+
+ssh jima@172.20.10.5 script_s $TMP_MAC/$tmp_base $tmp
+ssh jima@172.20.10.5 s $TMP_MAC/$tmp_base

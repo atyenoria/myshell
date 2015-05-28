@@ -1,0 +1,23 @@
+#!/bin/bash
+echo $1
+echo $2
+echo ”ここだりょ”
+
+#pm2 restart ~/myshell/pm2/d_rsync.sh $1 $2
+#pm2 restart ~/myshell/pm2/d_rsync.sh /Users/jima/work/rsyc_vagrant/test/sasa /home/vagrant/test_des/tes/sasa
+TMP=/Users/jima/myshell/pm2/`basename $1`.sh
+echo $TMP
+
+	cat <<EOF > $TMP  
+F=$1
+S=$2
+
+fswatch -0 $1 | while read -d "" event 
+do 
+    rsync --progress -avz \$F/ vagrant@192.168.200.200:\$S
+done
+EOF
+
+pm2 start $TMP
+pm2 restart $TMP
+

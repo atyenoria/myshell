@@ -1,0 +1,6 @@
+#!/bin/bash
+fswatch -0 $1 | while read -d "" event 
+  do 
+    echo "hello"
+    rsync --progress -avz $1 vagrant@192.168.200.200:~/test_des
+  done
