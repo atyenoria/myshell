@@ -1,3 +1,4 @@
+#!/bin/bash
 tmp=`readlink -e $1`
 tmp_base=`basename $tmp`
 
@@ -9,3 +10,20 @@ echo $tmp_base
 
 ssh jima@172.20.10.5 script_s $TMP_MAC/$tmp_base $tmp
 ssh jima@172.20.10.5 s $TMP_MAC/$tmp_base
+
+
+
+
+
+
+
+#remote 同期
+F=/Users/jima/work/rsyc_vagrant/test/test_laravel
+S=/home/vagrant/test_laravel
+
+events=(-e CREATE -e MODIFY -e MOVED_TO)
+while inotifywait ${events[@]} $S; do
+
+    rsync --progress -avz $S/ jima@172.20.10.5:$F
+
+done
