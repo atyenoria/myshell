@@ -14,7 +14,7 @@ S=$2
 
 fswatch -0 $1 | while read -d "" event 
 do 
-    rsync --progress -avz \$F/ vagrant@192.168.200.200:\$S
+    rsync --progress --delete -avz \$F/ vagrant@192.168.200.200:\$S
 done
 EOF
 
