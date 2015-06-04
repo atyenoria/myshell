@@ -10,27 +10,14 @@ TMP_NAME=(`sh ~/myshell/tmp/kip_name.sh`)
 #プロセスの名前から一致する奴を検索
 for x in `sh ~/myshell/tmp/kip_name.sh`;
 do
-		#echo $x
     if [[ $x = $1 ]]; 
     then
     		#echo "一致"
         Array+=($n)
     fi
     n=`expr $n + 1`
-    #echo $n
 done
 
-
-#echo ${Array[@]}
-
-
-# echo ${TMP_PID[0]} 
-
-# echo ${TMP_PID[3]} 
-
-# echo ${TMP_PID[10]} 
-
-# n=0 
 for x in ${Array[@]} ;
 do
 	#	echo $x

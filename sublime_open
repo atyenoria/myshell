@@ -1,0 +1,16 @@
+#!/bin/bash
+#for sublime to terminal for keyboadrd maestro
+
+TMP=`pbpaste`
+# echo $TMP
+TMP_PATH=${TMP%/*}
+# echo $TMP_PATH
+
+TMP_SUB="/Users/jima/my_config/sublime_tmp_dirr"
+
+TMP2="export sublime_tmp_dir=$TMP_PATH"
+
+# echo $TMP2
+echo "#!/bin/bash" > $TMP_SUB
+echo $TMP2  >> $TMP_SUB
+echo "alias mc=\"cd \$sublime_tmp_dir\"">>$TMP_SUB

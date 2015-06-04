@@ -1,0 +1,1062 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"file",
+				"file"
+			],
+			[
+				"ans",
+				"ansible"
+			],
+			[
+				"nu",
+				"num_tmp"
+			],
+			[
+				"chr",
+				"chrome_search"
+			],
+			[
+				"controller",
+				"controller"
+			],
+			[
+				"x",
+				"x"
+			],
+			[
+				"t",
+				"tmp_filename"
+			],
+			[
+				"a",
+				"array"
+			],
+			[
+				"FILES",
+				"FILESP"
+			],
+			[
+				"cla",
+				"cla	Create controller class"
+			],
+			[
+				"images",
+				"images"
+			],
+			[
+				"pa",
+				"parsed_html"
+			],
+			[
+				"par",
+				"parse"
+			],
+			[
+				"resources",
+				"resources"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "build_support",
+			"settings":
+			{
+				"buffer_size": 321,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Bash Build System/Bash.sublime-build",
+					""
+				],
+				[
+					"Packages/User/bash.sublime-build",
+					""
+				],
+				[
+					"Packages/User/coffee.sublime-build",
+					""
+				],
+				[
+					"Packages/User/node.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Bash Build System/Bash.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Better CoffeeScript/CoffeeScript.sublime-build",
+					""
+				],
+				[
+					"Packages/Better CoffeeScript/CoffeeScript.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/coffee.sublime-build",
+					""
+				],
+				[
+					"Packages/User/node.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Better CoffeeScript/CoffeeScript.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Better CoffeeScript/CoffeeScript.sublime-build",
+					""
+				],
+				[
+					"Packages/Better CoffeeScript/CoffeeScript.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/node.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/node.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Ruby/Ruby.sublime-build",
+					""
+				],
+				[
+					"Packages/User/bash.sublime-build",
+					""
+				],
+				[
+					"Packages/User/coffee.sublime-build",
+					""
+				],
+				[
+					"Packages/User/node.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/coffee.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/User/bash.sublime-build",
+					""
+				],
+				[
+					"Packages/User/coffee.sublime-build",
+					""
+				],
+				[
+					"Packages/User/node.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/coffee.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/User/coffee.sublime-build",
+					""
+				],
+				[
+					"Packages/User/node.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/node.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 187.0,
+		"last_filter": "proje",
+		"selected_items":
+		[
+			[
+				"proje",
+				"Project: Save As"
+			],
+			[
+				"addf",
+				"Project: Add Folder"
+			],
+			[
+				"addfol",
+				"Project: Add Folder"
+			],
+			[
+				"fol",
+				"Project: Add Folder"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"add ",
+				"Package Control: Add Repository"
+			],
+			[
+				"addrepo",
+				"Package Control: Add Repository"
+			],
+			[
+				"add re",
+				"Package Control: Add Repository"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"isntall ",
+				"Package Control: Install Package"
+			],
+			[
+				"remove ",
+				"Package Control: Remove Package"
+			],
+			[
+				"repo",
+				"Package Control: Add Repository"
+			],
+			[
+				"add repo",
+				"Package Control: Add Repository"
+			],
+			[
+				"",
+				"ANF: Copy Current File"
+			],
+			[
+				"snippet",
+				"Snippet: form_for"
+			],
+			[
+				"sni form",
+				"Snippet: form_for text_area"
+			],
+			[
+				"Snippet: form_tag",
+				"Snippet: form_tag"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"scss",
+				"Set Syntax: SCSS"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"add",
+				"Package Control: Add Repository"
+			],
+			[
+				"addre",
+				"Package Control: Add Repository"
+			],
+			[
+				"i",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 390.0
+	},
+	"console":
+	{
+		"height": 167.0,
+		"history":
+		[
+			"sublime.log_commands(True)",
+			";",
+			"exit",
+			"quit",
+			"a",
+			"stop",
+			"sublime.log_commands(True)",
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"sublime.log_commands",
+			"sublime.log_commands(True)",
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/jima/myshell"
+	],
+	"file_history":
+	[
+		"/Users/jima/.bashrc",
+		"/Users/jima/log_build/detete",
+		"/Users/jima/log_build/test/adfa",
+		"/Users/jima/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/jima/Library/Application Support/Sublime Text 3/Packages/User/Default.sublime-theme",
+		"/Users/jima/myruby/get_gresult.rb",
+		"/Users/jima/myruby/testaaaaaaaaaaaaa",
+		"/Users/jima/myruby/test.sh",
+		"/Users/jima/myruby/console.log",
+		"/Users/jima/myruby/hosts.denylist",
+		"/Users/jima/myruby/test",
+		"/Users/jima/myruby/hosts.conflist",
+		"/Users/jima/work/chrome_plugin/sample/option.html",
+		"/Users/jima/work/chrome_plugin/detet",
+		"/Users/jima/tasfas",
+		"/Users/jima/gtwsgsg",
+		"/Users/jima/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/jima/test.sampel",
+		"/Users/jima/myruby/hosts.conf",
+		"/Users/jima/.bash_profile",
+		"/Users/jima/System/Library/LaunchDaemons",
+		"/Users/jima/myruby/.gitignore",
+		"/Users/jima/～ト..",
+		"/Users/jima/.gitconfig",
+		"/Users/jima/myshell/tmp/get_gresult.rb",
+		"/Users/jima/myshell/chrome_tmp",
+		"/Users/jima/work/pro8/selenium_test/get_gresult.rb",
+		"/Users/jima/work/pro8/Dockerfile",
+		"/Users/jima/work/pro8/サンプルテスト",
+		"/usr/local/etc/apache2/2.4/httpd.conf",
+		"/usr/local/var/www/htdocs/index.php",
+		"/Users/jima/brew",
+		"/Users/jima/link",
+		"/Users/jima/php56",
+		"/usr/local/Cellar/phpmyadmin/4.4.4/share/phpmyadmin/config.inc.php",
+		"/usr/local/Cellar/phpmyadmin/4.4.4/share/phpmyadmin/config.ing.php",
+		"/usr/local/etc/nginx/servers/wordpress.conf",
+		"/usr/local/etc/nginx/nginx.conf",
+		"/usr/local/etc/nginx/servers/laravel.conf",
+		"/usr/local/etc/nginx/nginx.conf.default",
+		"/private/etc/php-fpm.conf",
+		"/var/www/index.",
+		"/var/www/index.html",
+		"/var/www/index.php",
+		"/var/www/ng",
+		"/usr/local/etc/php/5.6/php-fpm.conf.default",
+		"/usr/local/etc/php/5.6/php.ini",
+		"/usr/local/etc/php/5.6/php-fpm.conf",
+		"/private/var/www/a.html",
+		"/Users/jima/work/pro7/blog/nginx/laravel_access.log",
+		"/Users/jima/myshell/pm2/test_laravel.sh",
+		"/Users/jima/myshell/script_s",
+		"/Users/jima/work/rsyc_vagrant/test/vagrant/.bashrc",
+		"/Users/jima/work/rsyc_vagrant/test/test_laravel/blog/server.php",
+		"/Users/jima/work/rsyc_vagrant/test/vagrant/tettttttttttttttttt",
+		"/Users/jima/work/rsyc_vagrant/test/nginx/conf.d/laravel.conf",
+		"/Users/jima/work/rsyc_vagrant/test/nginx/conf.d/tetete",
+		"/Users/jima/work/rsyc_vagrant/test/nginx/conf.d/tettete",
+		"/Users/jima/work/rsyc_vagrant/test/nginx/conf.d/gasfga",
+		"/Users/jima/work/rsyc_vagrant/test/sample",
+		"/Users/jima/work/rsyc_vagrant/test/vagrant/.shell/testa",
+		"/Users/jima/work/rsyc_vagrant/test/vagrant/.shell/testaaaa",
+		"/Users/jima/work/rsyc_vagrant/test/.vimrc",
+		"/Users/jima/work/pro6/vagrant-ansible-laravel/Vagrantfile",
+		"/Users/jima/work/pro6/test/ansible_laravel_ubuntu_test/Vagrantfile",
+		"/Users/jima/work/pro6/ubuntu-vagrant/vagrant-ansible-rails/playbooks/base/roles/ubuntu/tasks/main.yml",
+		"/Users/jima/work/pro6/ubuntu-vagrant/vagrant-ansible-rails/aaaaaaaaaaa",
+		"/Users/jima/work/pro6/ubuntu-vagrant/vagrant-ansible-rails/Vagrantfile",
+		"/Users/jima/work/pro6/ansible-ubuntu-rails-server/Vagrantfile",
+		"/Users/jima/work/template_vagrant/bootstrap.sh",
+		"/Users/jima/work/template_vagrant/Vagrantfile",
+		"/Users/jima/.ssh/known_hosts",
+		"/Users/jima/work/pro4/grape-example/Gemfile",
+		"/Users/jima/work/pro4/GrapeExample/config/application.rb",
+		"/Users/jima/work/pro4/GrapeExample/app/apis/api/v1/message_boards.rb",
+		"/Users/jima/work/pro4/GrapeExample/app/apis/api/v1/comments.rb",
+		"/Users/jima/work/pro4/GrapeExample/app/models/comment.rb",
+		"/Users/jima/work/pro4/GrapeExample/app/models/message_board.rb",
+		"/Users/jima/work/pro4/GrapeExample/Gemfile",
+		"/Users/jima/work/pro4/GrapeExample/config/routes.rb",
+		"/Users/jima/work/pro4/GrapeExample/lib/tasks/routes.rake",
+		"/Users/jima/work/pro4/GrapeExample/app/apis/api/base.rb",
+		"/Users/jima/work/pro4/GrapeExample/app/apis/api/v1/base.rb",
+		"/Users/jima/work/pro1/tuto2/spec/rails_helper.rb",
+		"/Users/jima/work/pro4/api_test/spec/spec_helper.rb",
+		"/Users/jima/work/pro4/api_test/spec/support/factory_girl.rb",
+		"/Users/jima/work/pro4/api_test/spec/rails_helper.rb",
+		"/Users/jima/work/pro4/api_test/Gemfile",
+		"/Users/jima/work/pro4/api_test/bs-config.js",
+		"/Users/jima/work/pro4/api_test/spec/models/product_spec.rb",
+		"/Users/jima/work/pro4/api_test/app/models/product.rb",
+		"/Users/jima/work/pro4/api_test/spec/factories/atyes.rb",
+		"/Users/jima/work/pro4/api_test/config/database.yml",
+		"/Users/jima/work/pro4/api_test/app/controllers/api/v1/products_controller.rb",
+		"/Users/jima/work/pro4/api_test/Gemfile.lock",
+		"/Users/jima/work/pro4/api_test/app/controllers/api/products_controller.rb",
+		"/Users/jima/work/pro4/api_test/spec/requests/products_spec.rb",
+		"/Users/jima/work/pro4/api_test/config/application.rb",
+		"/Users/jima/work/pro4/api_test/config/boot.rb",
+		"/Users/jima/work/pro4/api_test/config/environment.rb",
+		"/Users/jima/work/pro4/api_test/config/routes.rb",
+		"/Users/jima/work/pro4/api_test/app/views/products/_form.html.erb",
+		"/Users/jima/work/pro4/api_test/spec/models/post_spec.rb",
+		"/Users/jima/work/pro4/api_test/app/assets/javascripts/application.js",
+		"/Users/jima/work/pro4/api_test/app/views/layouts/application.html.erb",
+		"/Users/jima/work/pro4/api_test/app/views/products/new.html.erb",
+		"/Users/jima/work/pro4/api_test/app/models/category.rb",
+		"/Users/jima/work/pro4/api_test/app/views/products/edit.html.erb",
+		"/Users/jima/work/pro4/api_test/app/views/products/index.html.erb",
+		"/Users/jima/work/pro4/api_test/app/controllers/products_controller.rb",
+		"/Users/jima/work/pro4/api_test/app/views/products/index.json.jbuilder",
+		"/Users/jima/Desktop/サンプルコード（swift iphoneアプリ開発）/chap07/example7-5/ex_animationWithDuration_center/ex_animationWithDuration_center/ViewController.swift",
+		"/Users/jima/Desktop/サンプルコード（swift iphoneアプリ開発）/chap07/example7-5/ex_transitionWithView/ex_transitionWithView/IMG_4184.png",
+		"/Users/jima/Desktop/サンプルコード（swift iphoneアプリ開発）/chap08/example8-2/embed_navigationController_detail/embed_navigationController/SeaDetailViewController.swift",
+		"/Users/jima/Desktop/サンプルコード（swift iphoneアプリ開発）/chap07/example7-3/ex_tableView/ex_tableView/ViewController.swift",
+		"/Users/jima/myshell/job_kill",
+		"/Users/jima/work/pro3/ffserv/ffserver.conf",
+		"/Users/jima/myshell/test",
+		"/Users/jima/myshell/sampleee",
+		"/Users/jima/myshell/README.md",
+		"/Users/jima/myshell/sample",
+		"/Users/jima/myshell/tmp/arc/chrome.log.20150515.gz",
+		"/Users/jima/myshell/tmp/arc/logrotate.log.20150515.gz",
+		"/Users/jima/myshell/tmp/arc/cxshell.log.20150515.gz",
+		"/Users/jima/myshell/d_chrome",
+		"/Users/jima/myshell/tmp/chrome.log",
+		"/Users/jima/myshell/autozip",
+		"/Users/jima/myshell/gcls"
+	],
+	"find":
+	{
+		"height": 22.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"<current file>",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"fpc",
+			"pc",
+			"fpc",
+			"path",
+			"delete",
+			"open_files_in_new_window",
+			"psg",
+			"pbcopy",
+			"updateCounter",
+			"getCounter",
+			"tab",
+			"gi",
+			"fc",
+			"mdfind",
+			"userconfig",
+			"alias",
+			"DocumentRoot",
+			"www.conf",
+			"user",
+			"nginx",
+			"log",
+			"php-fpm",
+			"listen",
+			"nginx",
+			"cat",
+			"cd",
+			"cat",
+			"sites",
+			"home",
+			"my.cn",
+			"my",
+			"local",
+			"synced",
+			"trigger",
+			"git remote add origin https://github.com/atyenoria/ansible_laravel_ubuntu_test.git\ngit push -u origin master",
+			"bash",
+			"ansible",
+			"cg-",
+			"c",
+			"pro6",
+			"mcrypt.so",
+			"opcache",
+			"mbstring",
+			"rg",
+			"rgr",
+			"rgri",
+			"awk",
+			"audio",
+			"\n\n\n",
+			"audio",
+			"ffm",
+			"uyvy422",
+			"ffm",
+			"a",
+			"LOGNAME",
+			"exit",
+			"ammend",
+			"session_store.rb",
+			"log",
+			"RunService",
+			"> ",
+			"\n>",
+			"> ",
+			"\n>",
+			"EOF",
+			"\n>",
+			"FILESP",
+			"files",
+			"gi",
+			"yc",
+			"git",
+			"devise_for :admin_users",
+			"rails",
+			"\n  ",
+			"			",
+			"scroll",
+			"devise_for",
+			"binding.pry",
+			"gad",
+			"g",
+			"mi",
+			"mic",
+			"redirect_back_or",
+			"la",
+			"\nla",
+			"la",
+			"mcd",
+			"shell",
+			"application.rb",
+			"application",
+			"_header.html",
+			"super+commnad",
+			"event",
+			"makefile",
+			"  \n",
+			"ˆu",
+			"lc_time",
+			"lc_timeX",
+			"lc_time",
+			"log_timezone",
+			"timezone",
+			"nakajima"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"FILES"
+		],
+		"reverse": false,
+		"show_context": false,
+		"use_buffer2": false,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "build_support",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 321,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"apply_syntax_touched": true,
+							"bh_regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content"
+							],
+							"incomplete_sync": null,
+							"origin_encoding": "ASCII",
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage",
+							"syntax_mgr_loaded": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 20.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.ShellCommand":
+	{
+		"height": 112.0
+	},
+	"output.exec":
+	{
+		"height": 88.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 118.0
+	},
+	"pinned_build_system": "",
+	"project": "myshell.sublime-project",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"spec/rails_helper.rb"
+			],
+			[
+				"route",
+				"config/routes.rb"
+			],
+			[
+				"gem",
+				"Gemfile"
+			],
+			[
+				"routes",
+				"config/routes.rb"
+			],
+			[
+				"rotue",
+				"config/routes.rb"
+			],
+			[
+				"rotues",
+				"config/routes.rb"
+			],
+			[
+				"edit",
+				"app/views/devise/registrations/edit.html.erb"
+			],
+			[
+				"applicatio",
+				"app/views/layouts/application.html.erb"
+			],
+			[
+				"show",
+				"app/views/products/show.html.erb"
+			],
+			[
+				"product",
+				"app/controllers/products_controller.rb"
+			],
+			[
+				"inde",
+				"app/views/products/index.html.erb"
+			],
+			[
+				"arti",
+				"app/models/article.rb"
+			],
+			[
+				"even",
+				"app/models/event.rb"
+			],
+			[
+				"commne",
+				"app/models/comment.rb"
+			],
+			[
+				"catego",
+				"app/models/category_bike.rb"
+			],
+			[
+				"categ",
+				"test/models/category_test.rb"
+			],
+			[
+				"bike",
+				"app/models/bike.rb"
+			],
+			[
+				"cate",
+				"app/models/category.rb"
+			],
+			[
+				"ore",
+				"app/models/order.rb"
+			],
+			[
+				"ored",
+				"app/models/order.rb"
+			],
+			[
+				"cus",
+				"app/models/customer.rb"
+			],
+			[
+				"autho",
+				"app/models/author.rb"
+			],
+			[
+				"au",
+				"test/models/author_test.rb"
+			],
+			[
+				"book",
+				"tmp/cache/assets/development/sprockets/v3.0/bW2dP2nwwOcSQ50FaTiSxaiLAArKfhO0hWVjy8xbb88.cache"
+			],
+			[
+				"prod",
+				"app/models/product.rb"
+			],
+			[
+				"productco",
+				"app/controllers/products_controller.rb"
+			],
+			[
+				"for",
+				"app/views/products/_form.html.erb"
+			],
+			[
+				"confi",
+				"config.ru"
+			],
+			[
+				"produ",
+				"app/models/product.rb"
+			],
+			[
+				"author",
+				"app/models/author.rb"
+			],
+			[
+				"authoe",
+				"test/models/author_test.rb"
+			],
+			[
+				"make",
+				"app/models/maker.rb"
+			],
+			[
+				"seed",
+				"db/seeds.rb"
+			],
+			[
+				"usercon",
+				"app/controllers/users_controller.rb"
+			],
+			[
+				"user",
+				"app/models/user.rb"
+			],
+			[
+				"userc",
+				"app/controllers/users_controller.rb"
+			],
+			[
+				"add",
+				"app/models/address.rb"
+			],
+			[
+				"address",
+				"tmp/cache/assets/development/sprockets/v3.0/jdk4Ri_leikhjHL9sEKWdc7YtHA416swC1BgVjsohlw.cache"
+			],
+			[
+				"fac",
+				"spec/factories.rb"
+			],
+			[
+				"sample",
+				"lib/tasks/sample_data.rake"
+			],
+			[
+				"usercontro",
+				"app/controllers/users_controller.rb"
+			],
+			[
+				"userpage",
+				"spec/requests/user_pages_spec.rb"
+			],
+			[
+				"micropo",
+				"app/models/micropost.rb"
+			],
+			[
+				"users",
+				"spec/models/user_spec.rb"
+			],
+			[
+				"rspec",
+				"spec/models/user_spec.rb"
+			],
+			[
+				"micropost",
+				"spec/models/micropost_spec.rb"
+			],
+			[
+				"ge",
+				"Gemfile"
+			],
+			[
+				"cust",
+				"app/assets/stylesheets/custom.css.scss"
+			],
+			[
+				"applicaton",
+				"app/controllers/application_controller.rb"
+			],
+			[
+				"application",
+				"app/assets/javascripts/application.js"
+			],
+			[
+				"authenti",
+				"spec/requests/authentication_pages_spec.rb"
+			],
+			[
+				"session",
+				"app/controllers/sessions_controller.rb"
+			],
+			[
+				"application.htm",
+				"app/views/layouts/application.html.erb"
+			],
+			[
+				"custom",
+				"app/assets/stylesheets/custom.css.scss"
+			],
+			[
+				"appilicaton",
+				"app/views/layouts/application.html.erb"
+			],
+			[
+				"appilcation",
+				"config/application.rb"
+			],
+			[
+				"user_controller",
+				"app/controllers/users_controller.rb"
+			],
+			[
+				"gemfile",
+				"Gemfile"
+			],
+			[
+				"boot",
+				"config/boot.rb"
+			],
+			[
+				"10",
+				"tmp/cache/assets/development/sprockets/v3.0/A15UE6pAOMCeHqXbF3ueQqgNSsH0vT9_c94IGBhd0DM.cache"
+			],
+			[
+				"34",
+				"tmp/cache/assets/development/sprockets/v3.0/4IFvf3mbgJl5-5smU14GEK1K9LaAhV_Hil8Nix9lCWs.cache"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 142.0,
+	"status_bar_visible": false,
+	"template_settings":
+	{
+	}
+}

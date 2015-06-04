@@ -1,0 +1,19 @@
+#!/bin/bash
+#プロセス名でkill
+
+function grpk_tmp(){ 
+ TMP=`cat testfile.txt`
+	 
+for x in `ps -ef | grep $TMP | grep -v grep|gawk '{print $2}'|sed -n $1p`;
+do
+		kill -9 $x
+		echo $x
+done
+echo "kill completed!!"
+
+}
+
+
+echo $1 > testfile.txt
+grpk_tmp
+

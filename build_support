@@ -1,0 +1,18 @@
+#!/bin/bash
+
+
+
+#ruby
+RUBY="/Users/jima/.rbenv/shims/ruby"
+
+
+LOG_FILE="/Users/jima/log_build/log_sublime"
+
+TMP_FILE=`pbpaste`
+echo "------------------------------------------------------------------------------------------"> $LOG_FILE
+
+$RUBY $TMP_FILE >> $LOG_FILE 2>&1 >> $LOG_FILE
+
+# /Users/jima/myruby/get_gresult.rb
+
+

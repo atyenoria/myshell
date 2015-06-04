@@ -1,0 +1,11 @@
+#!/bin/bash
+#for sublime debug tool
+
+BUILD_RUBY="/Users/jima/.rbenv/shims/ruby"
+BUILD_PATH=`pbpaste`
+BUILD_LOG="/Users/jima/log_build/log_sublime"
+
+
+$BUILD_RUBY $BUILD_PATH > $BUILD_LOG 2>&1
+clear
+tail -f $BUILD_LOG
