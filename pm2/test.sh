@@ -1,7 +1,9 @@
-F=/Users/jima/work/rsyc_vagrant/test/test
-S=/home/vagrant/test
+#!/bin/bash
 
-fswatch -0 /Users/jima/work/rsyc_vagrant/test/test | while read -d "" event 
-do 
-    rsync --progress --delete -avz $F/ vagrant@192.168.200.200:$S
+echo testaaaa
+read key
+while [ "$key" = "a" ]
+do
+  echo "ok"
+  read key
 done

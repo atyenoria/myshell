@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"BUI",
+				"BUILD_RUBY"
+			],
+			[
 				"file",
 				"file"
 			],
@@ -61,17 +65,6 @@
 			]
 		]
 	},
-	"buffers":
-	[
-		{
-			"file": "build_support",
-			"settings":
-			{
-				"buffer_size": 321,
-				"line_ending": "Unix"
-			}
-		}
-	],
 	"build_system": "",
 	"build_system_choices":
 	[
@@ -207,7 +200,7 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 187.0,
+		"height": 247.0,
 		"last_filter": "proje",
 		"selected_items":
 		[
@@ -349,29 +342,44 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/Users/jima/myshell"
-	],
 	"file_history":
 	[
+		"/Users/jima/my_config/sublime_tmp_dir",
+		"/Users/jima/myshell/build_support",
+		"/Users/jima/myshell/sublime_open",
 		"/Users/jima/.bashrc",
+		"/Users/jima/myruby/get_gresult.rb",
+		"/Users/jima/myruby/my_libs/CODE_OF_CONDUCT.md",
+		"/Users/jima/myruby/highlight.css",
+		"/Users/jima/myshell/log_shell",
+		"/Users/jima/myshell/untitled",
+		"/Users/jima/myshell/d_chrome",
+		"/Users/jima/myruby/sample.sh",
+		"/Users/jima/myshell/sublime_open ",
+		"/Users/jima/myshell/psgk",
+		"/Users/jima/myshell/ruby_sublime",
+		"/Users/jima/log_build/pid_tail",
+		"/Users/jima/Library/Application Support/Sublime Text 3/Packages/User/Default.sublime-theme",
+		"/Users/jima/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/jima/myruby/test.sh",
+		"/Users/jima/myruby/Support/Sublime",
+		"/Users/jima/myruby/Text",
+		"/Users/jima/myruby/3/Packages/User/Preferences.sublime-settings",
+		"/Users/jima/myruby/3/Packages/User/Default",
+		"/Users/jima/myruby/(OSX).sublime-keymap",
+		"/Users/jima/myruby/test",
+		"/Users/jima/Library/Application",
+		"/Users/jima/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/jima/log_build/detete",
 		"/Users/jima/log_build/test/adfa",
-		"/Users/jima/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
-		"/Users/jima/Library/Application Support/Sublime Text 3/Packages/User/Default.sublime-theme",
-		"/Users/jima/myruby/get_gresult.rb",
 		"/Users/jima/myruby/testaaaaaaaaaaaaa",
-		"/Users/jima/myruby/test.sh",
 		"/Users/jima/myruby/console.log",
 		"/Users/jima/myruby/hosts.denylist",
-		"/Users/jima/myruby/test",
 		"/Users/jima/myruby/hosts.conflist",
 		"/Users/jima/work/chrome_plugin/sample/option.html",
 		"/Users/jima/work/chrome_plugin/detet",
 		"/Users/jima/tasfas",
 		"/Users/jima/gtwsgsg",
-		"/Users/jima/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/jima/test.sampel",
 		"/Users/jima/myruby/hosts.conf",
 		"/Users/jima/.bash_profile",
@@ -463,30 +471,11 @@
 		"/Users/jima/work/pro4/api_test/app/views/products/new.html.erb",
 		"/Users/jima/work/pro4/api_test/app/models/category.rb",
 		"/Users/jima/work/pro4/api_test/app/views/products/edit.html.erb",
-		"/Users/jima/work/pro4/api_test/app/views/products/index.html.erb",
-		"/Users/jima/work/pro4/api_test/app/controllers/products_controller.rb",
-		"/Users/jima/work/pro4/api_test/app/views/products/index.json.jbuilder",
-		"/Users/jima/Desktop/サンプルコード（swift iphoneアプリ開発）/chap07/example7-5/ex_animationWithDuration_center/ex_animationWithDuration_center/ViewController.swift",
-		"/Users/jima/Desktop/サンプルコード（swift iphoneアプリ開発）/chap07/example7-5/ex_transitionWithView/ex_transitionWithView/IMG_4184.png",
-		"/Users/jima/Desktop/サンプルコード（swift iphoneアプリ開発）/chap08/example8-2/embed_navigationController_detail/embed_navigationController/SeaDetailViewController.swift",
-		"/Users/jima/Desktop/サンプルコード（swift iphoneアプリ開発）/chap07/example7-3/ex_tableView/ex_tableView/ViewController.swift",
-		"/Users/jima/myshell/job_kill",
-		"/Users/jima/work/pro3/ffserv/ffserver.conf",
-		"/Users/jima/myshell/test",
-		"/Users/jima/myshell/sampleee",
-		"/Users/jima/myshell/README.md",
-		"/Users/jima/myshell/sample",
-		"/Users/jima/myshell/tmp/arc/chrome.log.20150515.gz",
-		"/Users/jima/myshell/tmp/arc/logrotate.log.20150515.gz",
-		"/Users/jima/myshell/tmp/arc/cxshell.log.20150515.gz",
-		"/Users/jima/myshell/d_chrome",
-		"/Users/jima/myshell/tmp/chrome.log",
-		"/Users/jima/myshell/autozip",
-		"/Users/jima/myshell/gcls"
+		"/Users/jima/work/pro4/api_test/app/views/products/index.html.erb"
 	],
 	"find":
 	{
-		"height": 22.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -502,6 +491,19 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"chrome_tmp",
+			"相対パス",
+			"フルパス",
+			"bashrc",
+			"sublime support",
+			"fpc",
+			"pfc",
+			"find",
+			"フルパス",
+			"ファイル",
+			"fpc",
+			"file",
+			"fps",
 			"fpc",
 			"pc",
 			"fpc",
@@ -619,108 +621,6 @@
 		"whole_word": false,
 		"wrap": true
 	},
-	"groups":
-	[
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
-					"buffer": 0,
-					"file": "build_support",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 321,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"apply_syntax_touched": true,
-							"bh_regions":
-							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content"
-							],
-							"incomplete_sync": null,
-							"origin_encoding": "ASCII",
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage",
-							"syntax_mgr_loaded": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
-			]
-		}
-	],
 	"incremental_find":
 	{
 		"height": 20.0
@@ -762,14 +662,13 @@
 	},
 	"output.find_results":
 	{
-		"height": 0.0
+		"height": 104.0
 	},
 	"output.sftp":
 	{
 		"height": 118.0
 	},
 	"pinned_build_system": "",
-	"project": "myshell.sublime-project",
 	"replace":
 	{
 		"height": 40.0
@@ -1046,7 +945,6 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
 	"settings":
 	{
 	},

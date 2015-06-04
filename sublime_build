@@ -1,0 +1,43 @@
+#!/bin/bash
+#for sublime debug tool
+
+#ruby
+BUILD_RUBY="/Users/jima/.rbenv/shims/ruby"
+
+#sh
+BUILD_SH="/bin/sh"
+
+#php
+BUILD_PHP="/usr/local/bin/php"
+
+
+BUILD_PATH=`pbpaste`
+BUILD_LOG="/Users/jima/log_build/log_sublime"
+
+
+
+
+clear
+#パスの拡張子を取り出す
+TYPE=${BUILD_PATH##*.}
+case $TYPE in
+	sh)
+		echo "これはsh" > $BUILD_LOG
+		osascript -e 'tell application "Keyboard Maestro Engine" to do script "7FF4D9E6-B13D-433B-A5B9-4A7B88E6EA37"'
+		clear
+		;;
+	rb)
+		echo "これはruby" > $BUILD_LOG
+		$BUILD_RUBY $BUILD_PATH > $BUILD_LOG 2>&1
+		tail -f $BUILD_LOG
+		;;
+	php)
+		echo "これはphp" > $BUILD_LOG
+		$BUILD_PHP $BUILD_PATH > $BUILD_LOG 2>&1
+		tail -f $BUILD_LOG
+		;;
+	*)
+		echo "拡張子判定不能" > $BUILD_LOG
+		;;
+esac
+
