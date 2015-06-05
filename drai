@@ -3,6 +3,6 @@
 
 for x in `docker images  | gawk '{print $3}'|sed -n $1p |sed -n 2,100p`;
 do
-docker rmi $x
+docker rmi -f $x
 echo "$image x remove"
 done
