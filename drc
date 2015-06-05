@@ -1,0 +1,16 @@
+#!/bin/bash
+#docker process all stop and kill
+
+for x in `docker ps  | gawk '{print $1}'|sed -n $1p |sed -n 2,100p`;
+do
+docker stop $x
+echo "$x stop"
+done
+
+
+
+for x in `docker ps -a | gawk '{print $1}'|sed -n $1p |sed -n 2,100p`;
+do
+docker rm $x
+echo "$x stop"
+done

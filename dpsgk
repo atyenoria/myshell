@@ -1,8 +1,0 @@
-#!/bin/bash
-#docker process all kill
-
-for x in `docker ps -a  | gawk '{print $1}'|sed -n $1p |sed -n 2,100p`;
-do
-docker rm $x
-echo "$x killed"
-done
