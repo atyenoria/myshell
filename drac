@@ -1,5 +1,5 @@
 #!/bin/bash
-#docker process all stop and kill
+#docker process all remove
 
 for x in `docker ps  | gawk '{print $1}'|sed -n $1p |sed -n 2,100p`;
 do
@@ -12,5 +12,5 @@ done
 for x in `docker ps -a | gawk '{print $1}'|sed -n $1p |sed -n 2,100p`;
 do
 docker rm $x
-echo "$x stop"
+echo "$x remove"
 done
