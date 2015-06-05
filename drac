@@ -14,3 +14,4 @@ do
 docker rm $x
 echo "$x remove"
 done
+

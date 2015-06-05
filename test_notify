@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [ $# -ne 1 ]
+then
+        echo "usage:"
+        echo "    \$ $0 \"message\""
+        exit 1
+fi
+
+/Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier -message "$1" -title "Notification" -activate
