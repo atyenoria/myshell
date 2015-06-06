@@ -12,7 +12,7 @@ BUILD_PHP="/usr/local/bin/php"
 
 
 
-BUILD_PATH=`pbpaste`
+TMP=`pbpaste`
 BUILD_LOG="/Users/jima/log_build/log_sublime"
 
 #成功、失敗画像
@@ -24,10 +24,10 @@ function build_status(){
 if [ $? == 0 ]; 
 then
 #成功
-terminal-notifier -message "$FORMAT build" -title succeed -sound default -contentImage $IMG_SUCCEED
+terminal-notifier -message "$FORMAT build" -title Succeed -sound default -contentImage $IMG_SUCCEED
 else
 #失敗
-terminal-notifier -message "$FORMAT build" -title faild -sound default -contentImage $IMG_FAILED
+terminal-notifier -message "$FORMAT build" -title Faild -sound default -contentImage $IMG_FAILED
 fi
 }
 
@@ -44,29 +44,29 @@ tail -f $BUILD_LOG
 
 clear
 #パスの拡張子を取り出す
-TYPE=${BUILD_PATH##*.}
+TYPE=${TMP##*.}
 case $TYPE in
 	sh)
 		echo "これはsh" > $BUILD_LOG
-		#対話式
+		#対話式TMP
 		osascript -e 'tell application "Keyboard Maestro Engine" to do script "7FF4D9E6-B13D-433B-A5B9-4A7B88E6EA37"'
 		#実行出力
-		#$BUILD_SH $BUILD_PATH > $BUILD_LOG 2>&1
+		#$BUILD_SH $TMP > $BUILD_LOG 2>&1
 		build_sh
 		;;
 	rb)
 		FORMAT="ruby"
-		$BUILD_RUBY $BUILD_PATH > $BUILD_LOG 2>&1
+		$BUILD_RUBY $TMP > $BUILD_LOG 2>&1
 		build_after
 		;;
 	php)
 		FORMAT="php"
-		$BUILD_PHP $BUILD_PATH > $BUILD_LOG 2>&1	 
+		$BUILD_PHP $TMP > $BUILD_LOG 2>&1	 
 		build_after
 		;;
 	*)
 		echo "拡張子判定不能" > $BUILD_LOG 2>&1
-		build_after
+		terminal-notifier -message "拡張子不明" -title Failed -sound default 
 		;;
 esac
 
