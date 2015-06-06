@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+#ttys orchestration tool
+
+
+ARG_COMMAND=$1
+
+
+
+for x in `ps  | gawk '{print $2}'|sed -n 2,100p`;
+do
+ array+=(${x})
+done
+
+
+
+for x in ${array[@]};
+do
+
+trigger_action=0
+array_comp={}
+i=0
+
+	for y in ${array_comp[@]};
+	do
+		
+
+		if [ $x == ${array_comp[$i]} ]; 
+    then
+    trigger_action=1
+    break
+    fi
+
+	i=`expr $i + 1`
+	done
+
+
+if [ $trigger_action -eq 0 ]; 
+then
+trigger_action=1
+sudo ttyecho -n /dev/$x "$ARG_COMMAND
+"
+array_comp+=(${x})
+fi
+
+
+done

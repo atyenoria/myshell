@@ -1,1 +1,2 @@
-open -a Google\ Chrome $1
+#!/bin/bash
+open -a Google\ Chrome "$1"

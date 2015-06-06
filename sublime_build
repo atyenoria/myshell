@@ -32,7 +32,7 @@ fi
 }
 
 function build_sh(){
-terminal-notifier -message build -title "shell script" -sound default 
+terminal-notifier -message Build -title "Shell Script" -sound default 
 }
 
 function build_after(){
@@ -55,18 +55,19 @@ case $TYPE in
 		build_sh
 		;;
 	rb)
-		FORMAT="ruby"
+		FORMAT="Ruby"
 		$BUILD_RUBY $TMP > $BUILD_LOG 2>&1
 		build_after
 		;;
 	php)
-		FORMAT="php"
+		FORMAT="PHP"
 		$BUILD_PHP $TMP > $BUILD_LOG 2>&1	 
 		build_after
 		;;
 	*)
-		echo "拡張子判定不能" > $BUILD_LOG 2>&1
-		terminal-notifier -message "拡張子不明" -title Failed -sound default 
+		echo "実行ファイル" > $BUILD_LOG 2>&1
+		terminal-notifier -message Build -title "Exec File" -sound default 
+		osascript -e 'tell application "Keyboard Maestro Engine" to do script "BAFBF368-2E1A-41C4-9F8A-62870A86BEB5"'
 		;;
 esac
 
