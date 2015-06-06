@@ -37,6 +37,9 @@ i=0
 if [ $trigger_action -eq 0 ]; 
 then
 trigger_action=1
+sudo ttyecho -n /dev/$x "
+"
+
 sudo ttyecho -n /dev/$x "$ARG_COMMAND
 "
 array_comp+=(${x})

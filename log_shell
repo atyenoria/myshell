@@ -1,4 +1,4 @@
-l#!/bin/bash
+#!/bin/bash
 
 LOGRFILE=/Users/jima/myshell/tmp/logrotate.log
  {
