@@ -10,64 +10,91 @@ BUILD_SH="/bin/sh"
 #php
 BUILD_PHP="/usr/local/bin/php"
 
-
-
-TMP=`pbpaste`
-BUILD_LOG="/Users/jima/log_build/log_sublime"
+# BUILD_LOG="/Users/jima/log_build/log_sublime"
 
 #成功、失敗画像
 IMG_SUCCEED=/Users/jima/log_build/build_succeed.jpg
 IMG_FAILED=/Users/jima/log_build/build_faild.jpeg
 
+#build path
+BUILD_PATH=`pbpaste`
 
 function build_status(){
-if [ $? == 0 ]; 
+sleep 0.5
+build_status=`redis-cli --raw get sublime_build_status|sed -n 1p`
+if [ $build_status == 0 ]; 
 then
 #成功
 terminal-notifier -message "$FORMAT build" -title Succeed -sound default -contentImage $IMG_SUCCEED
 else
 #失敗
-terminal-notifier -message "$FORMAT build" -title Faild -sound default -contentImage $IMG_FAILED
+terminal-notifier -message "$FORMAT build" -title Failed -sound default -contentImage $IMG_FAILED
 fi
+
 }
 
-function build_sh(){
+function build_status_sh(){
 terminal-notifier -message Build -title "Shell Script" -sound default 
 }
 
-function build_after(){
-
-build_status
-
-tail -f $BUILD_LOG	
+function build_status_exec(){
+terminal-notifier -message Build -title "Exec File" -sound default 
 }
+
+
+
+function build(){
+build_tty=`redis-cli --raw get sublime_build_tty`
+redis-cli set sublime_build_status 1
+BUILD=`redis-cli --raw get sublime_build_fmt`
+
+sudo ttyecho -n /dev/$build_tty "export PS1=""
+"
+
+sudo ttyecho -n /dev/$build_tty "echo $BUILD
+"
+
+sudo ttyecho -n /dev/$build_tty "clear && $BUILD $BUILD_PATH && redis-cli set sublime_build_status 0
+"
+}
+
+
 
 clear
 #パスの拡張子を取り出す
-TYPE=${TMP##*.}
+TYPE=${BUILD_PATH##*.}
 case $TYPE in
 	sh)
 		echo "これはsh" > $BUILD_LOG
 		#対話式TMP
-		osascript -e 'tell application "Keyboard Maestro Engine" to do script "7FF4D9E6-B13D-433B-A5B9-4A7B88E6EA37"'
+		# osascript -e 'tell application "Keyboard Maestro Engine" to do script "7FF4D9E6-B13D-433B-A5B9-4A7B88E6EA37"'
 		#実行出力
 		#$BUILD_SH $TMP > $BUILD_LOG 2>&1
-		build_sh
+		redis-cli set sublime_build_fmt $BUILD_SH
+		build
+		build_status_sh
 		;;
 	rb)
 		FORMAT="Ruby"
-		$BUILD_RUBY $TMP > $BUILD_LOG 2>&1
-		build_after
+		# $BUILD_RUBY $TMP > $BUILD_LOG 2>&1
+		redis-cli set sublime_build_fmt $BUILD_RUBY
+		build
+		build_status
 		;;
 	php)
 		FORMAT="PHP"
-		$BUILD_PHP $TMP > $BUILD_LOG 2>&1	 
-		build_after
+		redis-cli set sublime_build_fmt $BUILD_PHP
+		$BUILD=$BUILD_PHP
+		# $BUILD_PHP $TMP > $BUILD_LOG 2>&1	 
+		build_status
 		;;
 	*)
-		echo "実行ファイル" > $BUILD_LOG 2>&1
-		terminal-notifier -message Build -title "Exec File" -sound default 
-		osascript -e 'tell application "Keyboard Maestro Engine" to do script "BAFBF368-2E1A-41C4-9F8A-62870A86BEB5"'
+		# echo "実行ファイル" > $BUILD_LOG 2>&1
+		redis-cli set sublime_build_fmt $BUILD_PATH
+		unset BUILD_PATH
+		build
+		build_status_exec
+		# osascript -e 'tell application "Keyboard Maestro Engine" to do script "BAFBF368-2E1A-41C4-9F8A-62870A86BEB5"'
 		;;
 esac
 

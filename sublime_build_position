@@ -1,0 +1,8 @@
+#!/bin/bash
+#set sublime debug position
+
+TMP=`tty`
+TMP_PATH=`basename $TMP`
+echo $TMP_PATH
+redis-cli set sublime_build_tty $TMP_PATH
+echo "set this tty to sublime debugposition"

@@ -1,2 +1,2 @@
 #!/bin/bash
-sof -i -n -P |gawk '{print $2}'|sed -n $1p
+lsof -i -n -P |gawk '{print $2}'|sed -n $1p
