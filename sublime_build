@@ -10,7 +10,7 @@ BUILD_SH="/bin/sh"
 #php
 BUILD_PHP="/usr/local/bin/php"
 
-# BUILD_LOG="/Users/jima/log_build/log_sublime"
+BUILD_LOG="/Users/jima/log_build/log_sublime"
 
 #成功、失敗画像
 IMG_SUCCEED=/Users/jima/log_build/build_succeed.jpg
@@ -21,8 +21,17 @@ BUILD_PATH=`pbpaste`
 
 function build_status(){
 sleep 1
+
+build_end_flag=`redis-cli --raw get sublime_build_end_flag|sed -n 1p`
+
+while [[ $build_end_flag == 0 ]]; do
+build_end_flag=`redis-cli --raw get sublime_build_end_flag|sed -n 1p`
+done
+
+
 build_status=`redis-cli --raw get sublime_build_status|sed -n 1p`
-if [ $build_status == 0 ]; 
+
+if [ $build_status == 1 ]; 
 then
 #成功
 terminal-notifier -message "$FORMAT build" -title Succeed -sound default -contentImage $IMG_SUCCEED
@@ -45,7 +54,9 @@ terminal-notifier -message Build -title "Exec File" -sound default
 
 function build(){
 build_tty=`redis-cli --raw get sublime_build_tty`
-redis-cli set sublime_build_status 1
+build_tty_tail=`redis-cli --raw get sublime_build_tty_tail`
+redis-cli set sublime_build_status 0
+redis-cli set sublime_build_end_flag 0
 BUILD=`redis-cli --raw get sublime_build_fmt`
 
 sudo ttyecho -n /dev/$build_tty "export PS1=""
@@ -54,8 +65,22 @@ sudo ttyecho -n /dev/$build_tty "export PS1=""
 sudo ttyecho -n /dev/$build_tty "echo $BUILD
 "
 
-sudo ttyecho -n /dev/$build_tty "clear && $BUILD $BUILD_PATH && redis-cli set sublime_build_status 0
+sudo ttyecho -n /dev/$build_tty "clear && $BUILD $BUILD_PATH|tee $BUILD_LOG && redis-cli set sublime_build_status 1  && redis-cli set sublime_build_end_flag 1
 "
+
+sublime_build_kill_tail_tty
+
+sudo ttyecho -n /dev/$build_tty_tail "clear && tail -f $BUILD_LOG
+"
+
+# sudo ttyecho -n /dev/$build_tty "clear && $BUILD $BUILD_PATH > $BUILD_LOG 2>&1 && redis-cli set sublime_build_status 1  && redis-cli set sublime_build_end_flag 1
+# "
+
+sudo ttyecho -n /dev/$build_tty "redis-cli set sublime_build_end_flag 1
+"
+
+
+
 }
 
 

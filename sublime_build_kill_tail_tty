@@ -1,0 +1,7 @@
+#!/bin/bash
+#kill tail process for determined tty
+build_build_tail=`redis-cli --raw get sublime_build_tty_tail|sed -n 1p`
+for x in `ps|grep tail|grep -v grep|grep $build_build_tail| gawk '{print $1}'`;
+do
+kill -9 $x
+done
