@@ -1,2 +1,3 @@
-puts asdfa
-asaf
+pu "asdfa"
+
+puts "asdfaaaa"

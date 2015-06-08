@@ -19,6 +19,27 @@ IMG_FAILED=/Users/jima/log_build/build_faild.jpeg
 #build path
 BUILD_PATH=`pbpaste`
 
+function build_tty_monitor(){
+redis-cli set sublime_build_tty_status 0
+build_tty=`redis-cli --raw get sublime_build_tty`
+build_tty_tail=`redis-cli --raw get sublime_build_tty_tail`
+
+sudo ttyecho -n /dev/$build_tty "
+"
+sudo ttyecho -n /dev/$build_tty "redis-cli set sublime_build_tty_status 1
+"
+sleep 0.15
+build_tty_end_flag=`redis-cli --raw get sublime_build_tty_status|sed -n 1p`
+if [ $build_tty_end_flag == 0 ];
+then
+#detect tty is not working
+osascript -e 'tell application "Keyboard Maestro Engine" to do script "4F7A1E47-A671-4A74-913C-79B53256563C"'
+fi
+
+}
+
+
+
 function build_status(){
 sleep 1
 
@@ -65,25 +86,30 @@ sudo ttyecho -n /dev/$build_tty "export PS1=""
 sudo ttyecho -n /dev/$build_tty "echo $BUILD
 "
 
-sudo ttyecho -n /dev/$build_tty "clear && $BUILD $BUILD_PATH|tee $BUILD_LOG && redis-cli set sublime_build_status 1  && redis-cli set sublime_build_end_flag 1
+#(under dev)use tail or debug
+sudo ttyecho -n /dev/$build_tty "clear && $BUILD $BUILD_PATH > $BUILD_LOG 2>&1 && redis-cli set sublime_build_status 1  && redis-cli set sublime_build_end_flag 1
 "
+# sudo ttyecho -n /dev/$build_tty "clear && $BUILD $BUILD_PATH > $BUILD_LOG 2>&1 && redis-cli set sublime_build_status 1  && redis-cli set sublime_build_end_flag 1
+# "
+# sudo ttyecho -n /dev/$build_tty "clear && $BUILD $BUILD_PATH|tee $BUILD_LOG && redis-cli set sublime_build_status 1  && redis-cli set sublime_build_end_flag 1
+# "
 
 sublime_build_kill_tail_tty
 
 sudo ttyecho -n /dev/$build_tty_tail "clear && tail -f $BUILD_LOG
 "
 
-# sudo ttyecho -n /dev/$build_tty "clear && $BUILD $BUILD_PATH > $BUILD_LOG 2>&1 && redis-cli set sublime_build_status 1  && redis-cli set sublime_build_end_flag 1
-# "
 
 sudo ttyecho -n /dev/$build_tty "redis-cli set sublime_build_end_flag 1
 "
-
-
-
 }
 
 
+
+
+
+###########################################################################
+build_tty_monitor
 
 clear
 #パスの拡張子を取り出す
