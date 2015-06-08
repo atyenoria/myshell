@@ -4,13 +4,10 @@
 
 ARG_COMMAND=$1
 
-
-
 for x in `ps  | gawk '{print $2}'|sed -n 2,100p`;
 do
  array+=(${x})
 done
-
 
 
 for x in ${array[@]};

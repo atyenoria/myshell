@@ -1,0 +1,4 @@
+#!/bin/bash
+# echo "sampple"
+# build_tty=`redis-cli --raw get sublime_build_tty|sed -n 1p`
+# [ $build_tty == "" ] || echo testss

@@ -20,7 +20,7 @@ IMG_FAILED=/Users/jima/log_build/build_faild.jpeg
 BUILD_PATH=`pbpaste`
 
 function build_status(){
-sleep 0.5
+sleep 1
 build_status=`redis-cli --raw get sublime_build_status|sed -n 1p`
 if [ $build_status == 0 ]; 
 then
