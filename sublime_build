@@ -21,6 +21,7 @@ BUILD_PATH=`pbpaste`
 
 function build_tty_monitor(){
 redis-cli set sublime_build_tty_status 0
+redis-cli set sublime_build_tty_tail_status 0    #shの場合は終了ステータスが不明の為感知でない #sh 標準入力が発生していたら注意
 build_tty=`redis-cli --raw get sublime_build_tty`
 build_tty_tail=`redis-cli --raw get sublime_build_tty_tail`
 
@@ -28,9 +29,23 @@ sudo ttyecho -n /dev/$build_tty "
 "
 sudo ttyecho -n /dev/$build_tty "redis-cli set sublime_build_tty_status 1
 "
-sleep 0.15
+
+sudo ttyecho -n /dev/$build_tty_tail "
+"
+sudo ttyecho -n /dev/$build_tty_tail "redis-cli set sublime_build_tty_tail_status 1
+"
+
+sudo ttyecho -n /dev/$build_tty_tail "redis-cli set sublime_build_tty_tail_status 1
+"
+
+sudo ttyecho -n /dev/ttys003 "redis-cli set sublime_build_tty_tail_status 1
+"
+
+sleep 0.3
 build_tty_end_flag=`redis-cli --raw get sublime_build_tty_status|sed -n 1p`
-if [ $build_tty_end_flag == 0 ];
+build_tty_tail_end_flag=`redis-cli --raw get sublime_build_tty_tail_status|sed -n 1p`
+# if [ $build_tty_end_flag == 0 -o $sublime_build_tty_tail_status == 0 ];
+if [ $build_tty_tail_end_flag == 0 -o $build_tty_end_flag == 0 ];
 then
 #detect tty is not working
 osascript -e 'tell application "Keyboard Maestro Engine" to do script "4F7A1E47-A671-4A74-913C-79B53256563C"'
@@ -55,10 +70,10 @@ build_status=`redis-cli --raw get sublime_build_status|sed -n 1p`
 if [ $build_status == 1 ]; 
 then
 #成功
-terminal-notifier -message "$FORMAT build" -title Succeed -sound default -contentImage $IMG_SUCCEED
+terminal-notifier -message "$FORMAT build" -title Succeed -sound Submarine -contentImage $IMG_SUCCEED
 else
 #失敗
-terminal-notifier -message "$FORMAT build" -title Failed -sound default -contentImage $IMG_FAILED
+terminal-notifier -message "$FORMAT build" -title Failed -sound Basso -contentImage $IMG_FAILED
 fi
 
 }
@@ -86,7 +101,15 @@ sudo ttyecho -n /dev/$build_tty "export PS1=""
 sudo ttyecho -n /dev/$build_tty "echo $BUILD
 "
 
+
+
 #(under dev)use tail or debug
+sublime_build_kill_tail_tty
+
+BUILD_DIR="${BUILD_PATH%/*}"
+sudo ttyecho -n /dev/$build_tty "cd $BUILD_DIR
+"
+
 sudo ttyecho -n /dev/$build_tty "clear && $BUILD $BUILD_PATH > $BUILD_LOG 2>&1 && redis-cli set sublime_build_status 1  && redis-cli set sublime_build_end_flag 1
 "
 # sudo ttyecho -n /dev/$build_tty "clear && $BUILD $BUILD_PATH > $BUILD_LOG 2>&1 && redis-cli set sublime_build_status 1  && redis-cli set sublime_build_end_flag 1
@@ -94,8 +117,8 @@ sudo ttyecho -n /dev/$build_tty "clear && $BUILD $BUILD_PATH > $BUILD_LOG 2>&1 &
 # sudo ttyecho -n /dev/$build_tty "clear && $BUILD $BUILD_PATH|tee $BUILD_LOG && redis-cli set sublime_build_status 1  && redis-cli set sublime_build_end_flag 1
 # "
 
-sublime_build_kill_tail_tty
 
+sublime_build_kill_tail_tty
 sudo ttyecho -n /dev/$build_tty_tail "clear && tail -f $BUILD_LOG
 "
 
@@ -108,7 +131,8 @@ sudo ttyecho -n /dev/$build_tty "redis-cli set sublime_build_end_flag 1
 
 
 
-###########################################################################
+########################################################################################
+sublime_build_kill_tail_tty
 build_tty_monitor
 
 clear
@@ -116,7 +140,6 @@ clear
 TYPE=${BUILD_PATH##*.}
 case $TYPE in
 	sh)
-		echo "これはsh" > $BUILD_LOG
 		#対話式TMP
 		# osascript -e 'tell application "Keyboard Maestro Engine" to do script "7FF4D9E6-B13D-433B-A5B9-4A7B88E6EA37"'
 		#実行出力

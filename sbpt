@@ -1,6 +1,5 @@
 #!/bin/bash
 #set sublime debug position
-
 TMP=`tty`
 TMP_PATH=`basename $TMP`
 echo $TMP_PATH

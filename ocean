@@ -1,0 +1,211 @@
+#!/bin/sh
+#digital ocean tool using tugboat by atyenoria
+
+
+###########################初期設定###################################
+#dropletの名前取得
+TIME=`date +"%Y/%m/%d/%R"`
+for x in `tugboat droplets|awk '{print \$1}'`;
+do
+Array_droplet_name+=($x=$TIME)
+done
+
+#dropletのid取得
+for x in `tugboat droplets|awk '{print $11}'|sed -e 's/)//g'`;
+do
+	# echo $x
+Array_droplet_id+=($x)
+done
+
+
+#イメージを取得
+for x in `tugboat images|awk '{print $3}'|sed -e 's/,//g'`;
+do
+# echo $x
+Array_image_id+=($x)
+done
+###########################初期設定　ここまで###################################
+
+
+
+
+
+
+###########################条件分岐###################################
+
+  cat << _EOB_
+  ++++++++++++++++++++++++++++++++++++++++++
++++++++  digital ocean useful toolv0.1 +++++++
+  ++++++++++++++++++++++++++++++++++++++++++
+1) dropletのバックアップ作成後+破壊
+2) dropletを全削除
+3) my-imageを削除（バックアップ数を事前に指定すること）
+4) 最新snap imageからdropletを作成
+
+plese type above number 
+_EOB_
+/bin/echo -n ">"
+
+read answer
+
+case $answer in
+1) #dropletのバックアップ作成後+破壊
+for (( i = 0; i < ${#Array_droplet_id[@]}; i++ ));
+do
+	#back up
+echo $i
+echo ${Array_droplet_name[$i]}
+echo ${Array_droplet_id[$i]}
+tugboat halt -i ${Array_droplet_id[$i]} -h
+tugboat wait -i ${Array_droplet_id[$i]} -s off
+sleep 8
+tugboat snapshot ${Array_droplet_name[$i]} -i ${Array_droplet_id[$i]}
+tugboat wait -i ${Array_droplet_id[$i]} -s active
+tugboat destroy -i ${Array_droplet_id[$i]} -c
+done
+echo "dropletのバックアップ作成後+破壊　終わり"
+break
+;;
+#dropletのバックアップ作成後+破壊　ここまで
+
+2) #dropletを全削除
+
+for (( i = 0; i < ${#Array_droplet_id[@]}; i++ ));
+do
+echo testaaa
+if test $i -eq 0
+then
+# echo $i
+echo ${#Array_image_id[$i]}
+fi
+tugboat destroy -i ${Array_droplet_id[$i]} -c
+done
+echo "dropletを全削除 終わり"
+break
+;;
+#dropletを全削除　ここまで
+
+
+3) #my-imageを削除
+BACK_NO=2 #最新のやつをどれだけ残すか
+if test ${#Array_image_id[@]} -gt $BACK_NO
+then
+echo delete images on
+BACK_NO_TMP=`expr ${#Array_image_id[@]} - $BACK_NO`
+for (( i = 0; i < ${#Array_image_id[@]}; i++ ));
+do
+
+if test $i -lt $BACK_NO_TMP
+then
+echo ${Array_image_id[$i]}
+echo delete this image
+tugboat destroy_image -i ${Array_image_id[$i]} -c
+fi
+done
+
+fi
+echo "my-imageを削除　終わり"
+break
+;;
+#my-imageを削除　ここまで
+
+
+4) # 最新snap imageからdropletを作成
+#名前を指定
+DROPLET_NAME="testsample" 
+I=`expr "${#Array_image_id[@]}" - 1`
+# echo $I
+tugboat create $DROPLET_NAME -i ${Array_image_id[$I]} -r 6 -s 62
+tugboat wait $DROPLET_NAME -s active
+echo "最新snap imageからdropletを作成 終わり"
+break
+;;
+
+###################tugboat create option#################
+# Regions:
+# Amsterdam 2 (id: 5) (slug: ams2)
+# Amsterdam 3 (id: 9) (slug: ams3)
+# Frankfurt 1 (id: 10) (slug: fra1)
+# London 1 (id: 7) (slug: lon1)
+# New York 2 (id: 4) (slug: nyc2)
+# New York 3 (id: 8) (slug: nyc3)
+# San Francisco 1 (id: 3) (slug: sfo1)
+# Singapore 1 (id: 6) (slug: sgp1)
+
+# Sizes:
+# 512MB (id: 66)
+# 1GB (id: 63)
+# 2GB (id: 62)
+# 4GB (id: 64)
+# 8GB (id: 65)
+# 16GB (id: 61)
+# 32GB (id: 60)
+# 48GB (id: 70)
+# 64GB (id: 69)
+
+# Global Images:
+# 681.0.0 (stable) (id: 12247463, distro: CoreOS)
+# 709.0.0 (alpha) (id: 12276929, distro: CoreOS)
+# 695.2.0 (beta) (id: 12334225, distro: CoreOS)
+# 20 x64 (id: 6370882, distro: Fedora)
+# 20 x32 (id: 6370885, distro: Fedora)
+# 5.10 x64 (id: 6372321, distro: CentOS)
+# 5.10 x32 (id: 6372425, distro: CentOS)
+# 6.0 x64 (id: 6372581, distro: Debian)
+# 6.0 x32 (id: 6372662, distro: Debian)
+# 21 x64 (id: 9640922, distro: Fedora)
+# 14.10 x32 (id: 9801951, distro: Ubuntu)
+# 14.10 x64 (id: 9801954, distro: Ubuntu)
+# 10.1 (id: 10144573, distro: FreeBSD)
+# 12.04.5 x64 (id: 10321756, distro: Ubuntu)
+# 12.04.5 x32 (id: 10321777, distro: Ubuntu)
+# 7.0 x64 (id: 10322059, distro: Debian)
+# 7.0 x32 (id: 10322378, distro: Debian)
+# 7 x64 (id: 10322623, distro: CentOS)
+# 6.5 x32 (id: 11523060, distro: CentOS)
+# 6.5 x64 (id: 11523085, distro: CentOS)
+# 15.04 x64 (id: 11631223, distro: Ubuntu)
+# 15.04 x32 (id: 11631386, distro: Ubuntu)
+# 14.04 x64 (id: 11836690, distro: Ubuntu)
+# 14.04 x32 (id: 11836942, distro: Ubuntu)
+# 22 x64 (id: 12065782, distro: Fedora)
+# 8.1 x64 (id: 12241402, distro: Debian)
+# 8.1 x32 (id: 12241519, distro: Debian)
+# WordPress on 14.04 (id: 6423475, distro: Ubuntu)
+# FreeBSD AMP on 10.1 (id: 10163059, distro: FreeBSD)
+# Cassandra on 14.04 (id: 10863222, distro: Ubuntu)
+# MongoDB 3.0 on 14.04 (id: 10984664, distro: Ubuntu)
+# Drupal 7.35 on 14.04 (id: 11080335, distro: Ubuntu)
+# Django on 14.04 (id: 11093476, distro: Ubuntu)
+# Mumble Server (murmur) on 14.04 (id: 11132249, distro: Ubuntu)
+# LAMP on 14.04 (id: 11146541, distro: Ubuntu)
+# LEMP on 14.04 (id: 11146558, distro: Ubuntu)
+# MEAN on 14.04 (id: 11146864, distro: Ubuntu)
+# Joomla! 3.4.1 on 14.04 (id: 11163798, distro: Ubuntu)
+# ELK Logging Stack on 14.04 (id: 11277038, distro: Ubuntu)
+# Drone on 14.04 (id: 11774848, distro: Ubuntu)
+# Docker 1.6.2 on 14.04 (id: 11851919, distro: Ubuntu)
+# Magento 1.9.1.1 on 14.04 (id: 11876697, distro: Ubuntu)
+# node-v0.12.3 on 14.04 (id: 11919291, distro: Ubuntu)
+# Dokku v0.3.18 on 14.04 (id: 11919487, distro: Ubuntu)
+# Ghost 0.6.4 on 14.04 (id: 12035275, distro: Ubuntu)
+# Ruby on Rails on 14.04 (Postgres, Nginx, Unicorn) (id: 12035706, distro: Ubuntu)
+# GitLab 7.11.4 CE on 14.04 (id: 12065268, distro: Ubuntu)
+# ownCloud 8.0.4 on 14.04 (id: 12333784, distro: Ubuntu)
+# Redmine on 14.04 (id: 7572830, distro: Ubuntu)
+# MediaWiki 1.24.2 on 14.04 (id: 11716043, distro: Ubuntu)
+# PHPMyAdmin on 14.04 (id: 11730661, distro: Ubuntu)
+###################tugboat create option (end)#################
+
+5) # テンプレ
+echo testsample
+break 
+;;
+
+
+*) #　無効な数字の場合
+echo "invalid number!!"
+;;
+esac
+###########################条件分岐ここまで###################################
+

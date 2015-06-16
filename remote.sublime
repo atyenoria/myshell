@@ -15,8 +15,6 @@ ssh jima@172.20.10.5 s $TMP_MAC/$tmp_base
 
 
 
-
-
 #remote 同期
 F=/Users/jima/work/rsyc_vagrant/test/test_laravel
 S=/home/vagrant/test_laravel
