@@ -1,0 +1,5 @@
+From: <eigotyoubunn30@localhost>
+To: <eigotyoubunn30@gmail.com>
+Subject: Hello, e-mail!
+Content-Type: text/plain;charset="UTF-8"
+Content-Transfer-Encoding: base64

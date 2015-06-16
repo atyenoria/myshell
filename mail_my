@@ -1,0 +1,40 @@
+#!/bin/sh
+ 
+#==============================================
+# mailコマンドメール送信します
+#==============================================
+sendMail() {
+    from="$1"
+    to="$2"
+    cc="$3"
+    bcc="$4"
+    subject="$5"
+    contents="$6"
+ 
+    inputEncoding="utf-8"
+    outputEncoding="iso-2022-jp"
+    subjectHead="=?$outputEncoding?B?"
+    subjectBody="`echo "$subject" | iconv -f $inputEncoding -t $outputEncoding | base64 | tr -d '\n'`"
+    subjectTail="?="
+    fullSubject="$subjectHead$subjectBody$subjectTail"
+    mailContents="`echo -e $contents | iconv -f $inputEncoding -t $outputEncoding`"
+ 
+    echo "$mailContents" | mail -s "$fullSubject" -c "$cc" -b "$bcc" "$to" -- -f "$from"
+    return $?
+}
+ 
+# メール送信テスト
+from="eigotyoubunn30@gmail.com"
+to="eigotyoubunn30@gmail.com"
+cc=""
+bcc=""
+subject="mailコマンドでメール送信テスト"
+contents="日本語も使えて\n
+改行コードで改行できて\n
+文字化けしないサンプルです"
+sendMail "$from" "$to" "$cc" "$bcc" "$subject" "$contents"
+if [ $? -eq 1 ]; then
+    echo "send mail failure"
+    exit 1
+fi
+echo "send mail success"
